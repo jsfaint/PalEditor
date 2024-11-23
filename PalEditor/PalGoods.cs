@@ -12,6 +12,7 @@ using System.IO;
 namespace PalEditor
 {
     #region struct
+
     public struct PALGoods
     {
         public ushort goodsID;
@@ -37,16 +38,18 @@ namespace PalEditor
             this.goodsCnt = 0;
         }
     }
+
     #endregion
 
     public class PalGoods
     {
         private uint PAL_GOODS_OFFSET = 0x6c0;
-        private byte[] gBuf;//缓存
-        private PALGoods[] goods;//内存数组
+        private byte[] gBuf; //缓存
+        private PALGoods[] goods; //内存数组
         private const ushort GOODS_CNT = 234;
 
         #region PalGoodsInfo
+
         public PalGoodsInfo[] goodsInfo = new PalGoodsInfo[GOODS_CNT] //显示用数组
         {
             new PalGoodsInfo(0x003d, "观音符"),
@@ -284,6 +287,7 @@ namespace PalEditor
             new PalGoodsInfo(0x0125, "手卷"),
             new PalGoodsInfo(0x0126, "芦苇漂")
         };
+
         #endregion
 
         public PalGoods()
@@ -293,6 +297,7 @@ namespace PalEditor
         }
 
         #region Load Save
+
         public void LoadPalGoods(System.IO.FileStream fStream)
         {
             try
@@ -351,6 +356,7 @@ namespace PalEditor
                                 goods[jj].goodsID = goodsInfo[ii].goodsID;
                                 goods[jj].goodsCnt = goodsInfo[ii].goodsCnt;
                             }
+
                             break;
                         }
 
@@ -384,6 +390,7 @@ namespace PalEditor
                 System.Windows.Forms.MessageBox.Show("Exception in PalGoods.SavePalGoods(): " + e.Message);
             }
         }
+
         #endregion
 
         public void allGoods99()
@@ -395,6 +402,7 @@ namespace PalEditor
         }
 
         #region debug
+
 #if DEBUG
         //the following functions only for debug.
         private void outputDbgFile(string fileName)
@@ -405,6 +413,7 @@ namespace PalEditor
             {
                 strout = strout + goodsInfo[ii].goodsDescript + ", " + goodsInfo[ii].goodsCnt + "\r\n";
             }
+
             TextWriter stringWriter = new System.IO.StreamWriter(fileName);
             stringWriter.Write(strout);
             stringWriter.Close();
@@ -432,6 +441,7 @@ namespace PalEditor
             stringWriter.Close();
         }
 #endif
+
         #endregion
     }
 }

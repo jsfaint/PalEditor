@@ -1,10 +1,6 @@
 ﻿using System;
-
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace PalEditor
@@ -14,6 +10,7 @@ namespace PalEditor
         bool bFileLoaded = false;
         System.PlatformID platID;
         RPGData rpgData = new RPGData();
+
         enum PAL
         {
             exp = 0x00,
@@ -92,7 +89,8 @@ namespace PalEditor
             platID = System.Environment.OSVersion.Platform;
 
             if (platID == PlatformID.WinCE)
-                path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+                path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName()
+                    .CodeBase);
             else
                 path = System.IO.Directory.GetCurrentDirectory();
 
@@ -250,11 +248,13 @@ namespace PalEditor
                 message(PAL.money);
                 return false;
             }
+
             if (textBoxCalabash.Text == "")
             {
                 message(PAL.calabash);
                 return false;
             }
+
             if (textBoxSaveTime.Text == "")
             {
                 message(PAL.saveTime);
@@ -288,6 +288,7 @@ namespace PalEditor
         }
 
         #region textChange
+
         private void textBoxMoney_TextChanged(object sender, EventArgs e)
         {
             if (bFileLoaded == false || ((TextBox)sender).Text == "")
@@ -498,6 +499,7 @@ namespace PalEditor
 
             ((TextBox)sender).BackColor = Color.White;
         }
+
         #endregion
 
         //打开对应的存档, 并读取数据
@@ -505,7 +507,8 @@ namespace PalEditor
         {
             string path;
             if (platID == PlatformID.WinCE)
-                path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
+                path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName()
+                    .CodeBase);
             else
                 path = System.IO.Directory.GetCurrentDirectory();
 
@@ -574,7 +577,8 @@ namespace PalEditor
             dataGridGoods.TableStyles.Add(ts);
 
 
-            this.dataGridGoods.CurrentCellChanged += new System.EventHandler(dataGrid_CurrentCellChanged); // // DataGridEditing //
+            this.dataGridGoods.CurrentCellChanged +=
+                new System.EventHandler(dataGrid_CurrentCellChanged); // // DataGridEditing //
 
 
             const ushort GOODS_CNT = 234;
@@ -585,6 +589,7 @@ namespace PalEditor
                 dr[dcCnt] = rpgData.palGoods.goodsInfo[ii].goodsCnt;
                 dt.Rows.Add(dr);
             }
+
             dataGridGoods.DataSource = dt;
         }
 

@@ -1,10 +1,5 @@
 ﻿using System;
-
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace PalEditor
@@ -95,6 +90,7 @@ namespace PalEditor
                         checkBoxMagic[ii].Left = 110;
                         checkBoxMagic[ii].Top = top + ii / 2 * checkBoxMagic[ii].Height;
                     }
+
                     this.Controls.Add(checkBoxMagic[ii]);
                     checkBoxMagic[ii].CheckStateChanged += new System.EventHandler(this.checkBox_CheckStateChanged);
 
@@ -139,6 +135,7 @@ namespace PalEditor
                 {
                     mCount++;
                 }
+
                 if (mCount > Magic_PP_MAX)
                 {
                     mCount = Magic_PP_MAX;
