@@ -1,17 +1,16 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Resources;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("PalEditor")]
-[assembly: AssemblyDescription("仙剑奇侠传 存档修改器")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("jason (jsfaint@gmail.com)")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("PalEditor")]
-[assembly: AssemblyCopyright("copyright 2009")]
+[assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -21,7 +20,7 @@ using System.Resources;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c34de7b4-1cbd-4e9e-ac88-d860b0f02c47")]
+[assembly: Guid("8B2960CF-B76C-465F-A246-E9B7CEB1C395")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -30,9 +29,8 @@ using System.Resources;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("0.5.0.0")]
-
-// Below attribute is to suppress FxCop warning "CA2232 : Microsoft.Usage : Add STAThreadAttribute to assembly"
-// as Device app does not support STA thread.
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2232:MarkWindowsFormsEntryPointsWithStaThread")]
-[assembly: NeutralResourcesLanguageAttribute("zh-CN")]
+// You can specify all the values or you can default the Build and Revision Numbers
+// by using the '*' as shown below:
+// [assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
